@@ -6,6 +6,14 @@ const bookSchema = mongoose.Schema({
     category: String,
     image: String,
     title: String,
+    author:{
+        type:String,
+        default:"Anonymus"
+    },
+    authorId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User"
+    }
 });
 const Book = mongoose.model("Book", bookSchema);
 
